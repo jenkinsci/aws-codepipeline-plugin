@@ -404,6 +404,10 @@ public class AWSCodePipelineSCM extends hudson.scm.SCM {
                 return FormValidation.error("Please remove leading and trailing whitespaces from AWS Region");
             }
 
+            if (!value.matches("^[a-z0-9\\-]+$")) {
+                return FormValidation.error("The AWS Region name should match '[A-Za-z0-9@\\-_]+' pattern.");
+            }
+
             return FormValidation.ok();
         }
 
