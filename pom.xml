@@ -4,7 +4,7 @@
   <parent>
     <groupId>org.jenkins-ci.plugins</groupId>
     <artifactId>plugin</artifactId>
-    <version>4.75</version>
+    <version>4.88</version>
     <relativePath />
   </parent>
 
@@ -55,7 +55,8 @@
     <revision>0.50</revision>
     <changelist>-SNAPSHOT</changelist>
     <!-- https://www.jenkins.io/doc/developer/plugin-development/choosing-jenkins-baseline/ -->
-    <jenkins.version>2.387.3</jenkins.version>
+    <jenkins.baseline>2.452</jenkins.baseline>
+    <jenkins.version>${jenkins.baseline}.4</jenkins.version>
     <gitHubRepo>jenkinsci/${project.artifactId}-plugin</gitHubRepo>
     <aws-sdk-version>1.12.573</aws-sdk-version>
   </properties>
@@ -72,9 +73,14 @@
       <version>${aws-sdk-version}</version>
     </dependency>
     <dependency>
-      <groupId>joda-time</groupId>
-      <artifactId>joda-time</artifactId>
-      <version>2.9.9</version>
+      <groupId>io.jenkins.plugins</groupId>
+      <artifactId>commons-compress-api</artifactId>
+      <version>1.26.1-2</version>
+    </dependency>
+    <dependency>
+        <groupId>io.jenkins.plugins</groupId>
+        <artifactId>joda-time-api</artifactId>
+        <version>2.13.0-93.v9934da_29b_a_e9</version>
     </dependency>
     <dependency>
       <groupId>org.mockito</groupId>
